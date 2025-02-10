@@ -1,4 +1,3 @@
-import React from "react";
 import {
     MdAdminPanelSettings,
     MdKeyboardArrowDown,
@@ -13,7 +12,7 @@ import clsx from "clsx";
 import Chart from "../components/Chart.jsx";
 import { BGS, PRIOTITYSTYELS, TASK_TYPE, getInitials } from "../utils";
 import UserInfo from "../components/UserInfo";
-import {useGetDashboardStatsQuery} from "../redux/slices/api/taskApiSlice.js";
+import { useGetDashboardStatsQuery } from "../redux/slices/api/taskApiSlice.js";
 import Loading from "../components/Loader.jsx";
 
 
@@ -172,14 +171,14 @@ const Dashboard = () => {
         },
         {
             _id: "2",
-            label: "COMPLTED TASK",
+            label: "COMPLETED TASK",
             total: totals["completed"] || 0,
             icon: <MdAdminPanelSettings />,
             bg: "bg-[#0f766e]",
         },
         {
             _id: "3",
-            label: "TASK IN PROGRESS ",
+            label: "TASK IN PROGRESS",
             total: totals["in progress"] || 0,
             icon: <LuClipboardCheck />,
             bg: "bg-[#f59e0b]",

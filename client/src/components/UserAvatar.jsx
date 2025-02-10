@@ -5,9 +5,9 @@ import { IoLogOutOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getInitials } from "../utils/index.js";
-import {logout} from "../redux/slices/authSlice.js";
-import {toast} from "sonner";
-import {useLogoutMutation} from "../redux/slices/api/authApiSlice.js";
+import { logout } from "../redux/slices/authSlice.js";
+import { toast } from "sonner";
+import { useLogoutMutation } from "../redux/slices/api/authApiSlice.js";
 import AddUser from "./AddUser.jsx";
 import ChangePassword from "./ChangePassword.jsx";
 

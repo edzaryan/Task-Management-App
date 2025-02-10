@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "sonner";
 import Textbox from "../components/Textbox.jsx";
 import Button from "../components/Button.jsx";
-import { useDispatch, useSelector } from "react-redux";
 import { useLoginMutation } from "../redux/slices/api/authApiSlice.js";
-import { toast } from "sonner";
-import {setCredentials} from "../redux/slices/authSlice.js";
+import { setCredentials } from "../redux/slices/authSlice.js";
 import Loading from "../components/Loader.jsx";
 
 
@@ -67,28 +67,24 @@ const Login = () => {
                         </div>
 
                         <div className="flex flex-col gap-y-5">
-                            <Textbox
-                                placeholder="email@example.com"
-                                type="email"
-                                name="email"
-                                label="Email address"
-                                className="w-full rounded"
-                                register={register("email", {
-                                    required: "Email Address is required!"
-                                })}
-                                error={errors.email && errors.email.message}
-                            />
-                            <Textbox
-                                placeholder="Your password"
-                                type="password"
-                                name="password"
-                                label="Password"
-                                className="w-full rounded"
-                                register={register("password", {
-                                    required: "Password is required!"
-                                })}
-                                error={errors.password && errors.password.message}
-                            />
+                        <Textbox
+                            placeholder="email@example.com"
+                            type="email"
+                            name="email"
+                            label="Email address"
+                            className="w-full rounded"
+                            register={register}
+                            error={errors.email && errors.email.message}
+                        />
+                        <Textbox
+                            placeholder="Your password"
+                            type="password"
+                            name="password"
+                            label="Password"
+                            className="w-full rounded"
+                            register={register}
+                            error={errors.password && errors.password.message}
+                        />
                             <span className="text-sm text-gray-500 hover:text-blue-600 hover:underline cursor-pointer">
                                 Forget Password?
                             </span>

@@ -7,16 +7,16 @@ export const createTask = async (req, res) => {
         const { userId } = req.user;
         const { title, team, stage, date, priority, assets } = req.body;
 
+        // console.log("Req body:", title, team, stage, date, priority, assets);
+        // console.log("Req user:", userId);
+
         let text = "New task has been assigned to you";
         if (team?.length > 1) {
             text = text + ` and ${team?.length - 1} others.`;
         }
 
-        text =
-            text +
-            ` The task priority is set a ${priority} priority, so check and act accordingly. The task date is ${new Date(
-                date
-            ).toDateString()}. Thank you!!!`;
+        text += ` The task priority is set a ${priority} priority, so check and act accordingly. 
+            The task date is ${new Date(date).toDateString()}. Thank you!!!`;
 
         const activity = {
             type: "assigned",
@@ -34,11 +34,7 @@ export const createTask = async (req, res) => {
             activities: activity,
         });
 
-        await Notice.create({
-            team,
-            text,
-            task: task._id,
-        });
+        await Notice.create({ team, text, task: task._id });
 
         res
             .status(200)
@@ -129,7 +125,7 @@ export const dashboardStatistics = async (req, res) => {
         const allTasks = isAdmin
             ? await Task.find({
                 isTrashed: false,
-            })
+               })
                 .populate({
                     path: "team",
                     select: "name role title email",

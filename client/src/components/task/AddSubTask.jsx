@@ -44,9 +44,7 @@ const AddSubTask = ({ open, setOpen, id }) => {
                             name='title'
                             label='Title'
                             className='w-full rounded'
-                            register={register("title", {
-                                required: "Title is required!",
-                            })}
+                            register={register}
                             error={errors.title ? errors.title.message : ""}
                         />
 
@@ -57,9 +55,7 @@ const AddSubTask = ({ open, setOpen, id }) => {
                                 name='date'
                                 label='Task Date'
                                 className='w-full rounded'
-                                register={register("date", {
-                                    required: "Date is required!",
-                                })}
+                                register={register}
                                 error={errors.date ? errors.date.message : ""}
                             />
                             <Textbox
@@ -68,9 +64,7 @@ const AddSubTask = ({ open, setOpen, id }) => {
                                 name='tag'
                                 label='Tag'
                                 className='w-full rounded'
-                                register={register("tag", {
-                                    required: "Tag is required!",
-                                })}
+                                register={register}
                                 error={errors.tag ? errors.tag.message : ""}
                             />
                         </div>

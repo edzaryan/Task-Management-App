@@ -1,11 +1,11 @@
+import { Link } from "react-router-dom";
 import { Popover, Transition } from "@headlessui/react";
 import moment from "moment";
 import { Fragment, useState } from "react";
 import { BiSolidMessageRounded } from "react-icons/bi";
 import { HiBellAlert } from "react-icons/hi2";
 import { IoIosNotificationsOutline } from "react-icons/io";
-import { Link } from "react-router-dom";
-import {useGetNotificationsQuery, useMarkNotiAsReadMutation} from "../redux/slices/api/userApiSlice.js";
+import { useGetNotificationsQuery, useMarkNotiAsReadMutation } from "../redux/slices/api/userApiSlice.js";
 import ViewNotification from "./ViewNotification.jsx";
 
 

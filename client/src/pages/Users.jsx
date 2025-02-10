@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Title from "../components/Title";
 import Button from "../components/Button";
 import { IoMdAdd } from "react-icons/io";
-import { summary } from "../assets/data";
 import { getInitials } from "../utils";
 import clsx from "clsx";
 import ConfirmatioDialog, { UserAction } from "../components/Dialogs";
 import AddUser from "../components/AddUser";
-import {useDeleteUserMutation, useGetTeamListQuery, useUserActionMutation} from "../redux/slices/api/userApiSlice.js";
-import {toast} from "sonner";
+import { useDeleteUserMutation, useGetTeamListQuery, useUserActionMutation } from "../redux/slices/api/userApiSlice.js";
+import { toast } from "sonner";
 
 
 const Users = () => {

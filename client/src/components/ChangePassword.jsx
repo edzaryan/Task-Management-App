@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
-import { useChangePasswordMutation } from "../redux/slices/api/userApiSlice";
 import { toast } from "sonner";
+import { useChangePasswordMutation } from "../redux/slices/api/userApiSlice";
 import ModalWrapper from "./ModalWrapper.jsx";
-import {Dialog} from "@headlessui/react";
+import { Dialog } from "@headlessui/react";
 import Textbox from "./Textbox.jsx";
 import Loading from "./Loader.jsx";
 import Button from "./Button.jsx";
